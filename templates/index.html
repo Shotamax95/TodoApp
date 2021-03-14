@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div style="text-align: center;">
+    <a class="btn btn-warning btn-lg m-5" href="/create" role="button">CREATE NEW TASK</a>
+</div>
+{% for post in posts %}
+<div class="card w-50 mb-3" style="margin: auto;">
+    <div class="card-body">
+        {% if post.due.date() < today %}
+        <div class="alert alert-warning" role="alert">
+            This Task is Expired!
+          </div>
+        {% endif %}
+        <h2 class="card-title">Title: {{ post.title }}</h2>
+        <p>Due: {{ post.due.date() }}</p>
+        <a class="btn btn-secondary" href="detail/{{ post.id }}" role="button">Detail</a>
+        <a class="btn btn-primary" href="update/{{ post.id }}" role="button">Update</a>
+        <a class="btn btn-danger" href="delete/{{ post.id }}" role="button">Delete</a>          
+    </div>
+  </div>
+
+{% endfor %}
+{% endblock %}
