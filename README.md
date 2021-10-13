@@ -1,6 +1,13 @@
-# TodoApp with Python Flask
-## Crud (Create, Read, Update, Delete):
+# Python Flask TodoApp with Crud (Create, Read, Update, Delete):
 
+## Front-end
+* HTML
+* Bootstrap
+
+## Back-end
+* Python Flask
+* SQLAlchemy (database) 
+ 
 ## Contents
 
 ### Home
